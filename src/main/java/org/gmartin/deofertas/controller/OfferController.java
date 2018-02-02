@@ -32,8 +32,8 @@ public class OfferController {
 					produces="application/json")
 	public ResponseEntity<?> getOffer(@RequestParam(name="stores", required=false) String stores,
 									  @RequestParam(name="desc", required=false) String desc,
-									  @RequestParam(name="priceFrom", required=false) Double priceFrom,
-									  @RequestParam(name="priceTo", required=false) Double priceTo) throws Exception{
+									  @RequestParam(name="price_from", required=false) Double priceFrom,
+									  @RequestParam(name="price_to", required=false) Double priceTo) throws Exception{
 		
 		SearchDTO searchDTO = new SearchDTO(desc, stores, priceFrom, priceTo);
 		
