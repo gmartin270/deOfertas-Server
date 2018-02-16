@@ -8,7 +8,7 @@ public class OfferImageDTO {
 	private Long offerId;
 	private String path;
 	private String hashId;
-	private byte[] image;
+	private String image;
 
 	public OfferImageDTO(){};
 	
@@ -59,11 +59,11 @@ public class OfferImageDTO {
 		this.hashId = hashId;
 	}
 
-	public byte[] getImage() {
+	public String getImage() {
 		return image;
 	}
 
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 }

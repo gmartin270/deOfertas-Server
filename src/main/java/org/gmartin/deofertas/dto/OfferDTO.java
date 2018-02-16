@@ -8,17 +8,19 @@ public class OfferDTO {
 
 	private Long id;
     private String hashId;
+    private String title;
     private String desc;
     private Long storeId;
     private String storeName;
     private Double price;
     private Boolean favorite;
-    private List<byte[]> images;
+    private String image;
     
     public OfferDTO(){}
     
     public OfferDTO(Long id,
     				String hashId,
+    				String title,
     				String desc,
     				Long storeId,
     				Double price,
@@ -26,6 +28,7 @@ public class OfferDTO {
     	
     	this.id = id;
     	this.hashId = hashId;
+    	this.title = title;
     	this.desc = desc;
     	this.storeId = storeId;
     	this.price = price;
@@ -84,20 +87,30 @@ public class OfferDTO {
 		this.storeId = storeId;
 	}
 
-	public List<byte[]> getImages() {
-		return images;
-	}
-
-	public void setImages(List<byte[]> images) {
-		this.images = images;
-	}
-
+	@JsonProperty(value="store_name")
 	public String getStoreName() {
 		return storeName;
 	}
 
+	@JsonProperty(value="store_name")
 	public void setStoreName(String storeName) {
 		this.storeName = storeName;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 }
 

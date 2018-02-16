@@ -6,6 +6,8 @@ import java.util.List;
 import org.gmartin.deofertas.model.Store;
 
 public class SearchDTO {
+	private String title;
+	
 	private String desc;
 
     private List<StoreDTO> storesDTO;
@@ -18,7 +20,8 @@ public class SearchDTO {
     
     public SearchDTO() {};
     
-    public SearchDTO(String desc,
+    public SearchDTO(String title,
+    		 String desc,
 			 String stores,
 			 Double priceFrom,
 			 Double priceTo) {
@@ -88,5 +91,13 @@ public class SearchDTO {
 
 	public void setStores(List<Store> stores) {
 		this.stores = stores;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 }

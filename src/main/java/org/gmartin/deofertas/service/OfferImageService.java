@@ -1,6 +1,7 @@
 package org.gmartin.deofertas.service;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -62,7 +63,7 @@ public class OfferImageService {
 		
 		offerImageDTO.setHashId(offerImage.getHashId());
 		offerImageDTO.setId(offerImage.getId());
-		offerImageDTO.setImage(offerImage.getImage());
+		offerImageDTO.setImage(Base64.getEncoder().encodeToString(offerImage.getImage()));
 		offerImageDTO.setOfferId(offerImage.getOffer().getId());
 		
 		return offerImageDTO;
@@ -72,7 +73,6 @@ public class OfferImageService {
 		OfferImage offerImage = new OfferImage();
 		
 		offerImage.setHashId(offerImageDTO.getHashId());
-		offerImage.setImage(offerImageDTO.getImage());
 		offerImage.setHashId(offerImageDTO.getHashId());
 		
 		return offerImage;

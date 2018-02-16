@@ -1,6 +1,7 @@
 package org.gmartin.deofertas.service;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Iterator;
 import java.util.List;
 
@@ -70,6 +71,7 @@ public class OfferService {
 	private OfferDTO offerToOfferDTO (Offer offer) {
 		OfferDTO offerDTO = new OfferDTO();
 		
+		offerDTO.setTitle(offer.getTitle());
 		offerDTO.setDesc(offer.getDescription());
 		offerDTO.setHashId(offer.getHashId());
 		offerDTO.setId(offer.getId());
@@ -77,16 +79,12 @@ public class OfferService {
 		offerDTO.setStoreId(offer.getStore().getId());
 		offerDTO.setStoreName(offer.getStore().getBusinessName());
 		
-		List<byte[]> images = new ArrayList<byte[]>();
-		Iterator<OfferImage> it = offer.getImages().iterator();
 		OfferImage image;
 		
-		while(it.hasNext()) {
-			image = (OfferImage)it.next();
-			images.add(image.getImage());
+		if (offer.getImages() != null && offer.getImages().size() > 0) {
+			image = offer.getImages().get(0);
+			offerDTO.setImage(Base64.getEncoder().encodeToString(image.getImage()));
 		}
-		
-		offerDTO.setImages(images);
 		
 		return offerDTO;
 	}
@@ -98,6 +96,7 @@ public class OfferService {
 			offer.setStore(storeDAO.load(offerDTO.getStoreId()));
 		}
 		
+		offer.setTitle(offerDTO.getTitle());
 		offer.setDescription(offerDTO.getDesc());
 		offer.setHashId(offerDTO.getHashId());
 		offer.setId(offerDTO.getId());

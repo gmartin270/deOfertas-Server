@@ -17,7 +17,10 @@ public class Offer extends GenericObject {
 	@Column(name="HASH_ID", nullable=false)
 	private String hashId;
 	
-	@Column(name="DESCRIPTION", nullable=false)
+	@Column(name="TITLE", nullable=false)
+	private String title;
+	
+	@Column(name="DESCRIPTION", nullable=true)
     private String description;
 	
 	@ManyToOne(fetch= FetchType.LAZY)
@@ -80,5 +83,13 @@ public class Offer extends GenericObject {
 	public void setImages(List<OfferImage> images) {
 		this.images = images;
 	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}	
 }
 

@@ -31,12 +31,14 @@ public class OfferController {
 					method=RequestMethod.GET,
 					produces="application/json")
 	public ResponseEntity<?> getOffer(@RequestParam(name="stores", required=false) String stores,
+									  @RequestParam(name="title", required=false) String title,
 									  @RequestParam(name="desc", required=false) String desc,
 									  @RequestParam(name="price_from", required=false) Double priceFrom,
 									  @RequestParam(name="price_to", required=false) Double priceTo) throws Exception{
 		
-		SearchDTO searchDTO = new SearchDTO(desc, stores, priceFrom, priceTo);
+		SearchDTO searchDTO = new SearchDTO(title, desc, stores, priceFrom, priceTo);
 		
+		Thread.sleep(1000);
 		return new ResponseEntity(offerService.getOffer(searchDTO), HttpStatus.OK);
 	}
 }
