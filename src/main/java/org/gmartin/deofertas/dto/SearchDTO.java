@@ -37,6 +37,7 @@ public class SearchDTO {
 			}
     	}
     	
+    	this.title = title;
     	this.desc = desc;
     	
     	if (storesDTO != null) {
