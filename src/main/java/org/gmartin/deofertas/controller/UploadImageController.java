@@ -2,6 +2,7 @@ package org.gmartin.deofertas.controller;
 
 import org.gmartin.deofertas.dto.OfferImageDTO;
 import org.gmartin.deofertas.dto.ResponseStatus;
+import org.gmartin.deofertas.dto.SuggestedOfferDTO;
 import org.gmartin.deofertas.service.UploadImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,17 @@ public class UploadImageController {
 	public ResponseEntity<?> uploadImage(@RequestBody OfferImageDTO imageDTO ) throws Exception {
 		
 		uploadService.uploadImage(imageDTO);
+		
+		return new ResponseEntity(new ResponseStatus(), HttpStatus.OK);
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@RequestMapping(value="/uploadSuggestion",
+					method=RequestMethod.POST,
+					produces="application/json")
+	public ResponseEntity<?> uploadSuggestedOffer(@RequestBody SuggestedOfferDTO suggestedOfferDTO) throws Exception {
+		
+		uploadService.uploadSuggestedImage(suggestedOfferDTO);
 		
 		return new ResponseEntity(new ResponseStatus(), HttpStatus.OK);
 	}

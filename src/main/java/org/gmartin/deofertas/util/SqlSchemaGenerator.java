@@ -6,6 +6,7 @@ import org.gmartin.deofertas.model.GenericObject;
 import org.gmartin.deofertas.model.Offer;
 import org.gmartin.deofertas.model.OfferImage;
 import org.gmartin.deofertas.model.Store;
+import org.gmartin.deofertas.model.SuggestedOffer;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
@@ -27,6 +28,7 @@ public class SqlSchemaGenerator {
 		config.addAnnotatedClass(Offer.class);
 		config.addAnnotatedClass(Store.class);
 		config.addAnnotatedClass(OfferImage.class);
+		config.addAnnotatedClass(SuggestedOffer.class);
 		
 		SchemaExport schemaExport = new SchemaExport(config);
 		schemaExport.setDelimiter(";");

@@ -33,8 +33,14 @@ public class Offer extends GenericObject {
 	@Column(name="FAVORITE", nullable=false)
     private boolean favorite;
 	
+	@Column(name="LINK", nullable=true)
+	private String link;
+	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "offer", targetEntity=OfferImage.class)
 	private List<OfferImage> images;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "offer", targetEntity=SuggestedOffer.class)
+	private List<SuggestedOffer> suggestedOffers;
     
 	public String getDescription() {
 		return description;
@@ -90,6 +96,22 @@ public class Offer extends GenericObject {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}	
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
+	public List<SuggestedOffer> getSuggestedOffers() {
+		return suggestedOffers;
+	}
+
+	public void setSuggestedOffers(List<SuggestedOffer> suggestedOffers) {
+		this.suggestedOffers = suggestedOffers;
+	}
 }
 

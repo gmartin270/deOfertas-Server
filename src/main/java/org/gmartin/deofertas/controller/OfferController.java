@@ -38,7 +38,6 @@ public class OfferController {
 		
 		SearchDTO searchDTO = new SearchDTO(title, desc, stores, priceFrom, priceTo);
 		
-		Thread.sleep(1000);
 		return new ResponseEntity(offerService.getOffer(searchDTO), HttpStatus.OK);
 	}
 }
