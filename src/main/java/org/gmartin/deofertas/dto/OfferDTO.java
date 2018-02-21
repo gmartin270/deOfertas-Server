@@ -15,6 +15,7 @@ public class OfferDTO {
     private Double price;
     private Boolean favorite;
     private String image;
+    private String link;
     
     public OfferDTO(){}
     
@@ -24,7 +25,8 @@ public class OfferDTO {
     				String desc,
     				Long storeId,
     				Double price,
-    				Boolean favorite) {
+    				Boolean favorite,
+    				String link) {
     	
     	this.id = id;
     	this.hashId = hashId;
@@ -32,7 +34,8 @@ public class OfferDTO {
     	this.desc = desc;
     	this.storeId = storeId;
     	this.price = price;
-    	this.favorite = favorite;    	
+    	this.favorite = favorite;
+    	this.link = link;
     }
 
     public Long getId() {
@@ -111,6 +114,14 @@ public class OfferDTO {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
 	}
 }
 

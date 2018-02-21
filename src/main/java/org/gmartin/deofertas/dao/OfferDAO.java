@@ -29,7 +29,7 @@ public class OfferDAO extends GenericDAOImpl<Offer, Long> implements IOfferDAO {
 		}
 
 		if (searchDTO.getTitle() != null) {
-			criterions.add(Restrictions.ilike("title", searchDTO.getTitle() + "%"));
+			criterions.add(Restrictions.ilike("title", "%" + searchDTO.getTitle() + "%"));
 		}
 
 		return this.getByCriteria(criterions);

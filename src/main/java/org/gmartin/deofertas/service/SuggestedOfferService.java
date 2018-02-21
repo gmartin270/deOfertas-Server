@@ -96,6 +96,7 @@ public class SuggestedOfferService {
 		offerDTO.setPrice(offer.getPrice());
 		offerDTO.setStoreId(offer.getStore().getId());
 		offerDTO.setStoreName(offer.getStore().getBusinessName());
+		offerDTO.setLink(offer.getLink());
 		
 		return offerDTO;
 	}

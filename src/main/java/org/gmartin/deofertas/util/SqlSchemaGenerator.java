@@ -17,7 +17,7 @@ public class SqlSchemaGenerator {
 		
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
-		properties.put("hibernate.connection.url", "jdbc:mysql://127.0.0.1:3306/DEOFERTAS"); 
+		properties.put("hibernate.connection.url", "jdbc:mysql://127.0.0.1:3306/DEOFERTAS_PROD"); 
 		properties.put("hibernate.connection.username", "root");
 		properties.put("hibernate.connection.password", "patoxkgm");
 		properties.put("hibernate.connection.driver_class", "org.gjt.mm.mysql.Driver");

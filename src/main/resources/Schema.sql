@@ -36,7 +36,7 @@
         ID bigint not null auto_increment,
         VERSION bigint not null DEFAULT 0,
         HASH_ID varchar(255) not null,
-        IMAGE tinyblob not null,
+        IMAGE longblob not null,
         OFFER_ID bigint not null,
         primary key (ID)
     ) ENGINE=InnoDB;
@@ -52,7 +52,7 @@
     create table SUGGESTED_OFFERS (
         ID bigint not null auto_increment,
         VERSION bigint not null DEFAULT 0,
-        IMAGE tinyblob,
+        IMAGE longblob,
         SUGGESTION_DATE datetime not null,
         OFFER_ID bigint not null,
         primary key (ID)

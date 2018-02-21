@@ -11,7 +11,7 @@
 		<property name="driverClass" value="org.gjt.mm.mysql.Driver" />
 		
 		<!-- CHANGE THE DATABASE CONNECTION-->
-		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/DEOFERTAS"/>		
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/DEOFERTAS_PROD"/>		
 		<property name="user" value="root" />
 		<property name="password" value="patoxkgm" />
 		<!-- ***************************************** -->
